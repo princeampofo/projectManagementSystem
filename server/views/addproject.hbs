@@ -1,0 +1,70 @@
+<nav aria-label="breadcrumb" class="head">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active text-primary" aria-current="page">Fill in
+      the details below:</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{alert}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+{{/if}}
+
+<form action="/addproject" method="POST" class="main-form">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 form-group">
+      <label for="firstName" class="form-label">Firstname</label>
+      <input type="text" name="firstName" id="firstName" class="form-control" />
+    </div>
+    <div class="col-sm-12 col-md-6 form-group">
+      <label for="lastName" class="form-label">LastName</label>
+      <input type="text" name="lastName" id="lastName" class="form-control" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 form-group">
+      <label for="contact" class="form-label">Contact</label>
+      <input type="text" name="contact" id="contact" class="form-control" />
+    </div>
+    <div class="col-sm-12 col-md-6 form-group">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" name="location" id="location" class="form-control" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 form-group">
+      <label for="todayDate" class="form-label">Request Date</label>
+      <input type="date" name="todayDate" id="todayDate" class="form-control" />
+    </div>
+    <div class="col-sm-12 col-md-6 form-group">
+      <label for="estimatedDate" class="form-label">Estimated Completion Date</label>
+      <input
+        type="date"
+        name="estimatedDate"
+        id="estimatedDate"
+        class="form-control"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="request" class="form-label">Request</label>
+    <textarea name="request" id="request" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="status" class="form-label">Status</label>
+    <select name="status" id="status" class="form-control">
+      <option value="In Progress" selected>In Progress</option>
+      <option value="In Progress">Completed</option>
+    </select>
+  </div>
+  <div class="form-group mt-2 col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>

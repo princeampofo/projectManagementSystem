@@ -1,0 +1,15 @@
+.main-form,
+.alert {
+  max-width: 600px;
+  margin: auto;
+}
+
+.head {
+  max-width: 600px;
+  margin: auto;
+  font-size: 1.2em;
+}
+
+textarea {
+  resize: none;
+}
