@@ -23,6 +23,5 @@ app.set("view engine", "hbs");
 const route = require("./routes/userRoutes");
 
 app.use("/", route);
-// read data
 
 app.listen(port, () => console.log(`app is running on port ${port}`));
