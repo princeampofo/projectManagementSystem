@@ -4,7 +4,7 @@ const mysql = require("mysql");
 const exphbs = require("express-handlebars");
 const app = express();
 
-// reuqire and configure env
+// require and configure env
 const dotenv = require("dotenv");
 dotenv.config();
 

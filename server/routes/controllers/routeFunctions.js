@@ -2,17 +2,28 @@
 
 const mysql = require("mysql");
 
+
 const pool = mysql.createPool({
   connectionLimit: 100,
   host: process.env.HOST,
-  user: process.env.USER,
+  user: process.env.USERNAME,
   password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+  database: process.env.DATABASE
 });
+
+
+pool.getConnection((err,connection)=>{
+  if (err) console.log(err); 
+  else{
+    console.log("connection" +connection.state);
+  }
+
+})
 
 // View Home Page
 exports.view = (req, res) => {
   pool.getConnection((err, connection) => {
+
     const query = "SELECT * FROM project";
     connection.query(query, (err, data) => {
       // release connection
