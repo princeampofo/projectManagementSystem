@@ -12,14 +12,6 @@ const pool = mysql.createPool({
 });
 
 
-pool.getConnection((err,connection)=>{
-  if (err) console.log(err); 
-  else{
-    console.log("connection" +connection.state);
-  }
-
-})
-
 // View Home Page
 exports.view = (req, res) => {
   pool.getConnection((err, connection) => {
